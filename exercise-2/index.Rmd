@@ -1,0 +1,18 @@
+---
+output: html_document
+---
+#This is a scatter plot of Car Weight vs. Mileage 
+##Created using plotly
+```{r, echo = FALSE, message = FALSE}
+library(plotly)
+mtcarsdf <- as.data.frame(mtcars)
+plot_ly(mtcarsdf, x = mtcars$wt, y = mtcars$mpg, type = 'scatter',
+        mode = 'markers', hoverinfo = 'text', textposition = 'middle right',
+        textfont = list(color = '#000000', size = 16)) %>% 
+        layout(title = "Car Weight and MPG", 
+               xaxis = list(title = 'Weight', zeroline = TRUE,
+                            range = c(0, 6)),
+               yaxis = list(title = 'MPG', 
+                            range = c(0, 35)))
+
+```
