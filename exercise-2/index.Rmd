@@ -6,7 +6,7 @@ output: html_document
 ```{r, echo = FALSE, message = FALSE}
 library(plotly)
 mtcarsdf <- as.data.frame(mtcars)
-plot_ly(mtcarsdf, x = mtcars$wt, y = mtcars$mpg, type = 'scatter',
+plot <- plot_ly(mtcarsdf, x = mtcars$wt, y = mtcars$mpg, type = 'scatter',
         mode = 'markers', hoverinfo = 'text', textposition = 'middle right',
         textfont = list(color = '#000000', size = 16)) %>% 
         layout(title = "Car Weight and MPG", 
@@ -16,3 +16,4 @@ plot_ly(mtcarsdf, x = mtcars$wt, y = mtcars$mpg, type = 'scatter',
                             range = c(0, 35)))
 
 ```
+`r plot`
